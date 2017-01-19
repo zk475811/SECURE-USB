@@ -51,7 +51,10 @@ int WINAPI WInMain(HINSTANCE hInstance, HINSTANCE, hPrevInstance, LPSTR lpCmdLin
   DWORD BFlags = WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON;
   HWND hWnd = CreateWindowEx(Flags1, szWindowClass, szTitle, Flags2, 100, 100, 500, 200, 0, 0, hInstance, 0);
   HWND hwndbutton = CreateWindow(L"BUTTON", L"Select a File", BFlags, 10, 10, 100, 100, hWnd, NULL, (HINSTANCE)GetWindowLong(hWnd, GWLP_HINSTANCE), NULL);
-  
+ 
+  //change this 
+  SetLayeredWindowAttributes(hWnd, 0, 255, LWA_ALPHA);	
+	
   if (!hWnd)
   {
     MessageBox(NULL, _T("Call to create window failed"), _T("Encryption Key Generator"), NULL);
